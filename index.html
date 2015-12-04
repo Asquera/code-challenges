@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="codeChallengesApp" lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Code Challenges</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="angular.js"> </script>
+	<script src="app.js"> </script>
+</head>
+
+<body ng-controller="ExcerciseListCtrl" id="home">
+
+	<h1>Code Challenges</h1>
+  <ul>
+    <li ng-repeat="excercise in excercises">
+    	<p>{{excercise.snippet}}</p>
+      <span>{{excercise.name}}</span>
+      <p>{{excercise.snippet}}</p>
+    </li>
+  </ul>
+
+</body>
+</html>
