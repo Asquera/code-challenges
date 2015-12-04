@@ -10,29 +10,34 @@
 </head>
 
 <body ng-controller="ExcerciseListCtrl" id="home">
-
-
 	
 	<div class="container-fluid">
 		<h1>Code Challenges</h1>
-	  <div class="row">
-
-			<div class="col-md-2">Search: <input ng-model="query">
+		<div class="row">
+			<div class="col-md-12">Search: <input ng-model="query">
 				Sort by:
 				<select ng-model="orderProp">
 					<option value="name">Name</option>
 					<option value="snippet">Snippet</option>
 				</select>
 			</div>
-			  <div class="col-md-10">
-      	<!--Body content-->
+		</div>
+		<div class="row">
 
-			  <ul>
-			    <li ng-repeat="excercise in excercises | filter:query | orderBy:orderProp"> <!-- filtert und updated -->
-			      <span>{{excercise.name}}</span>
-			      <p>{{excercise.snippet}}</p>
-			    </li>
-			  </ul>
+			<div class="col-md-2">
+
+				<div class="list-group">
+					<a ng-repeat="excercise in excercises" href="#" class="list-group-item" ng-class="{active:isSelected(excercise)}" ng-click="setSelected(excercise)"> <!-- filtert und updated -->
+						<span>{{excercise.name}}</span>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-10">
+
+				<div class="list-group">
+					<span >{{currentExcercise.name}}</span>
+					<p>{{currentExcercise.snippet}}</p>
+				</div>
 			</div>
 		</div>
 	</div>

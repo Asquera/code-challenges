@@ -9,6 +9,14 @@ codeChallengesApp.controller('ExcerciseListCtrl', function ($scope) {
     {'name': 'Dotfiles einrichten',
      'snippet': 'Distillery cray pop-up semiotics minim laboris. Twee you probably haven\'t heard of them locavore, blue bottle DIY farm-to-table kickstarter hoodie pabst aliqua lomo.'}
   ];
-  $scope.orderProp = 'name'; 
   // default Auswahl, $scope.orderProp = '-name'; umgekehrte Sortierung
+  $scope.orderProp = 'name'; 
+  
+	$scope.setSelected = function(excercise) {
+		$scope.currentExcercise = excercise;
+	}
+
+	$scope.isSelected = function(excercise) {
+		return $scope.currentExcercise === excercise;
+	}
 });
